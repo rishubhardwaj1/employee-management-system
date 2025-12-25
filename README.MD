@@ -35,7 +35,7 @@ B.E. Computer Science Engineering
 ---
 
 ## ⚙️ Installation & Setup
-
+```bash
 ### 1️⃣ Clone the repository
 git clone <your-repo-url>
 cd employee-management-system-main
@@ -53,4 +53,4 @@ npm run build
 ### 7️⃣ Start the development server
 php artisan serve
 ### Open your browser and visit:http://127.0.0.1:8000
-```bash
+
