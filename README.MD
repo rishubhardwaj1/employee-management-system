@@ -55,5 +55,7 @@ npm run build
 php artisan serve
 ### Open your browser and visit:http://127.0.0.1:8000
 
+---
+
 ## 📸 Project Screenshots
 Below are some screenshots showcasing the application UI and functionality.
