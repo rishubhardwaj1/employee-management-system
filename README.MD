@@ -41,6 +41,7 @@ B.E. Computer Science Engineering
 git clone <your-repo-url>
 cd employee-management-system-main
 ### 2️⃣ Install backend dependencies
+```bash
 composer install
 ### 3️⃣ Install frontend dependencies
 npm install
