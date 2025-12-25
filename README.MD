@@ -40,3 +40,20 @@ B.E. Computer Science Engineering
 ```bash
 git clone <your-repo-url>
 cd employee-management-system-main
+### 2️⃣ Install backend dependencies
+composer install
+### 3️⃣ Install frontend dependencies
+npm install
+### 4️⃣ Environment configuration
+cp .env.example .env
+php artisan key:generate
+### 5️⃣ Run database migrations & seeders
+php artisan migrate --seed
+### 6️⃣ Build frontend assets
+npm run build
+### 7️⃣ Start the development server
+php artisan serve
+### Open your browser and visit:http://127.0.0.1:8000
+
+## 📸 Project Screenshots
+Below are some screenshots showcasing the application UI and functionality.
