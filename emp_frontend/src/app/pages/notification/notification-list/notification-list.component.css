@@ -1,0 +1,226 @@
+/* Notifications Container */
+.notifications-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between notifications */
+  max-width: 1000px; /* Adjust to your desired width */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Notification Bubble */
+.notification-bubble {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.notification-bubble:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+/* Notification Header */
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Notification Actions */
+.notification-actions {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+/* Notification Description */
+.notification-description {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #6c757d;
+  font-weight: bold;
+}
+
+/* Notification Dates */
+.notification-dates {
+  font-size: 0.9em;
+  color: #6c757d;
+  margin: 10px 0;
+}
+
+.notification-dates strong {
+  color: #333;
+}
+
+/* Button Styling */
+.btn {
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  transform: scale(1.05);
+}
+
+/* No Notifications Message */
+.no-notifications-message {
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+/* Icon styling */
+.notification-dates i {
+  margin-right: 5px;
+}
+
+/* Notification Status Icons */
+.notification-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+/* Seen Status */
+.seen-status {
+  color: #4caf50; /* Subtle green color for seen */
+  background-color: #e8f5e9; /* Light green background */
+  border: 1px solid #4caf50; /* Green border */
+  border-radius: 4px;
+  padding: 2px 6px; /* Padding around the icon */
+}
+
+/* Unseen Status */
+.unseen-status {
+  color: #f44336; /* Subtle red color for unseen */
+  background-color: #ffebee; /* Light red background */
+  border: 1px solid #f44336; /* Red border */
+  border-radius: 4px;
+  padding: 2px 6px; /* Padding around the icon */
+}
+
+/* Adjust icon size and spacing */
+.typcn {
+  font-size: 20px; /* Adjust the icon size if needed */
+}
+
+.notification-status i {
+  font-size: 16px; /* Adjust icon size */
+  margin-right: 5px; /* Space between icon and text */
+}
+
+/* Navigation links */
+.nav {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Basic link styles */
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Navigation links */
+.nav {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Basic link styles */
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, font-size 0.2s ease; /* Smooth transition for color and font-size */
+  font-size: 1rem; /* Base font size */
+}
+
+/* Hover effect */
+.nav-link:hover {
+  color: #007bff; /* Blue color on hover */
+  font-size: 1.05rem; /* Slightly larger font size on hover */
+}
+.empty-notifications {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background: linear-gradient(to right, #f0f4f8, #e2e6ea); /* Soft gradient background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.empty-notifications i {
+  font-size: 60px;
+  color: #007bff; /* Bright blue color for the icon */
+  display: block;
+  margin-bottom: 15px;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.empty-notifications i:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+.empty-message {
+  font-size: 22px;
+  font-weight: 600; /* Bold font weight */
+  color: #495057; /* Darker grey color for text */
+  margin: 0;
+  padding: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+.empty-notifications p {
+  margin: 0;
+  padding: 0;
+}

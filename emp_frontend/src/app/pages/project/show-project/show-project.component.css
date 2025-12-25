@@ -1,0 +1,89 @@
+/* Project Details Container */
+.project-details-container {
+  padding: 20px;
+}
+
+/* Project Details Card */
+.project-details-card {
+  background-color: #ffffff; /* Light background color */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Adjust width as necessary */
+  margin: 0 auto; /* Center the card */
+}
+
+/* Project Details Header */
+.project-details-header h4 {
+  font-size: 24px; /* Font size for header */
+  margin-bottom: 20px; /* Spacing below the header */
+}
+
+.project-details-header i {
+  color: #343a40; /* Dark color for header icon */
+  margin-right: 10px; /* Spacing between icon and text */
+}
+
+/* Project Details Content */
+.project-details-content {
+  display: flex;
+  flex-wrap: wrap; /* Allows content to wrap within the card */
+  gap: 20px; /* Space between items */
+}
+
+/* Project Detail Item */
+.project-detail-item {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa; /* Dim background color for each item */
+  padding: 15px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 550px; /* Ensures items don’t get too wide */
+}
+
+.project-detail-item i {
+  color: #343a40; /* Dark color for icons */
+  margin-right: 10px; /* Spacing between icon and text */
+}
+
+.project-detail-item p {
+  margin: 0;
+  font-size: 16px; /* Smaller font size */
+  color: #495057; /* Dark color for text */
+}
+
+/* Navigation links */
+.nav {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Basic link styles */
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Navigation links */
+.nav {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Basic link styles */
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, font-size 0.2s ease; /* Smooth transition for color and font-size */
+  font-size: 1rem; /* Base font size */
+}
+
+/* Hover effect */
+.nav-link:hover {
+  color: #007bff; /* Blue color on hover */
+  font-size: 1.05rem; /* Slightly larger font size on hover */
+}

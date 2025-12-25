@@ -1,0 +1,32 @@
+<!-- notification.component.html -->
+
+<div class="dropdown az-header-notification" (click)="toggleDropdown($event)">
+  <!-- Toggle button -->
+  <a  [ngClass]="{'new': hasUnreadNotifications()}">
+    <i class="typcn typcn-bell"></i> <!-- Notification bell icon -->
+  </a>
+  <!-- Dropdown menu -->
+  <div class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}">
+    <div class="az-dropdown-header mg-b-20 d-sm-none">
+      <a  (click)="toggleDropdown($event)" class="az-header-arrow">
+        <i class="icon ion-md-arrow-back"></i>
+      </a>
+    </div>
+    <h6 class="az-notification-title">Notifications</h6>
+    <p class="az-notification-text">You have {{ notifications.length }} unread notifications</p>
+    <div class="az-notification-list">
+      <div *ngFor="let notification of notifications" class="media">
+        <div class="az-img-user">
+          <i class="fa fa-calendar-check"></i> <!-- Icon representing a day off -->
+        </div>
+        <div class="media-body">
+          <p><strong>{{ notification.title }}</strong></p>
+          <span>{{ notification.getFormattedDescription().message }}</span>
+          <span>{{ notification.getFormattedDescription().fromDate }} - {{ notification.getFormattedDescription().toDate }}</span>
+        </div><!-- media-body -->
+      </div><!-- media -->
+      <!-- You can add more notification items here as needed -->
+    </div><!-- az-notification-list -->
+    <div class="dropdown-footer"><a routerLink="/view-notifications">View All Notifications</a></div>
+  </div><!-- dropdown-menu -->
+</div><!-- az-header-notification -->

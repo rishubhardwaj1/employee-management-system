@@ -1,0 +1,31 @@
+# Laravel
+/vendor
+/bootstrap/cache
+/storage/*.key
+/storage/logs
+/storage/framework
+
+# Environment files
+.env
+.env.*
+auth.json
+
+# Node / Vite
+/node_modules
+/public/build
+/public/hot
+npm-debug.log
+yarn-error.log
+
+# PHPUnit
+.phpunit.result.cache
+/.phpunit.cache
+
+# IDEs
+/.vscode
+/.idea
+/.fleet
+
+# OS / tools
+Homestead.json
+Homestead.yaml

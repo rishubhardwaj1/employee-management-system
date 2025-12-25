@@ -1,0 +1,60 @@
+<div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+  <div class="container">
+
+    <div class="az-content-left az-content-left-components">
+      <div class="component-item">
+        <label>Manage Notifications</label>
+        <nav class="nav flex-column">
+          <a routerLink="/view-notifications" routerLinkActive="active-link" class="nav-link">View All Notifications</a>
+          <!-- Add more navigation links if needed -->
+        </nav>
+      </div><!-- component-item -->
+    </div><!-- az-content-left -->
+
+    <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+      <div class="az-content-breadcrumb">
+        <span>Dashboard</span>
+        <span>Notifications</span>
+        <span>List</span>
+      </div>
+      <h4 class="az-content-label mg-b-5">Notification List</h4>
+      <p class="mg-b-20">Manage and view notifications here.</p>
+      <app-alert [message]="alertMessage" [type]="alertType"></app-alert>
+
+      <!-- Notifications Container -->
+      <div class="notifications-container">
+        <ng-container *ngIf="notifications.length; else noNotifications">
+          <div class="notification-bubble" *ngFor="let notification of notifications">
+            <div class="notification-header">
+              <h5 class="notification-title">{{ notification.title }}</h5>
+              <div class="notification-actions" *ngIf="!isAdmin">
+                <button (click)="markAsRead(notification.id)" class="btn btn-secondary btn-sm ms-2">Mark as Read</button>
+              </div>
+            </div>
+            <p class="notification-description">
+              {{ notification.getFormattedDescription()?.message || 'No description available' }}
+            </p>
+            <p class="notification-dates">
+              <strong>From:</strong> {{ notification.getFormattedDescription()?.fromDate || 'N/A' }}
+              <strong>To:</strong> {{ notification.getFormattedDescription()?.toDate || 'N/A' }}
+            </p>
+            <p class="mb-0 notification-status" *ngIf="!isAdmin">
+              <i [ngClass]="getNotificationStatusClass(notification)"></i>
+              {{ getNotificationStatusText(notification) }}
+            </p>
+          </div>
+        </ng-container>
+        <ng-template #noNotifications>
+          <div class="empty-notifications">
+            <i class="typcn typcn-folder"></i>
+            <p class="empty-message">Inbox is empty</p>
+          </div>
+        </ng-template>
+      </div>
+      <app-spinner *ngIf="isLoading"></app-spinner>
+
+      <div class="ht-40"></div>
+    </div><!-- az-content-body -->
+
+  </div><!-- container -->
+</div><!-- az-content -->

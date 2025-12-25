@@ -1,0 +1,84 @@
+<div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+  <div class="container">
+
+    <!-- Side Navigation -->
+    <div class="az-content-left az-content-left-components">
+      <div class="component-item">
+        <label>Manage Tasks</label>
+        <nav class="nav flex-column">
+          <!-- Conditionally show links based on user role -->
+          <a *ngIf="isAdmin" routerLink="/add-task" routerLinkActive="active-link" class="nav-link">Create Task</a>
+          <a routerLink="/tasks" routerLinkActive="active-link" class="nav-link">View All Tasks</a>
+        </nav>
+      </div><!-- component-item -->
+    </div><!-- az-content-left -->
+    <app-spinner *ngIf="isLoading"></app-spinner>
+
+    <!-- Content -->
+    <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+      <div class="az-content-breadcrumb">
+        <span>Dashboard</span>
+        <span>Tasks</span>
+        <span>List</span>
+      </div>
+      <h4 class="az-content-label mg-b-5">Task List</h4>
+      <p class="mg-b-20">Manage your tasks here.</p>
+      <app-alert [message]="alertMessage" [type]="alertType"></app-alert>
+
+      <!-- Search Form -->
+      <form (ngSubmit)="searchTasks()" class="row g-3 mb-4">
+        <div class="form-group col-md-6">
+          <input [(ngModel)]="searchTitle" type="text" class="form-control" id="search" name="search" placeholder="Search by Title" />
+        </div>
+        <div class="form-group col-md-6">
+          <button class="btn btn-secondary full-width-button" type="submit">Search</button>
+        </div>
+      </form>
+
+      <!-- Task Table -->
+      <div class="table-container">
+        <div class="table-responsive">
+          <table class="table table-hover mg-b-0">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let task of filteredTasks">
+              <th scope="row">{{ task.id }}</th>
+              <td>{{ task.title }}</td>
+              <td>{{ task.description }}</td>
+              <td>{{ task.status }}</td>
+              <td>
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                  <button (click)="viewTask(task.id)" class="btn btn-icon text-success">
+                    <span class="typcn typcn-eye"></span>
+                  </button>
+                  <button (click)="editTask(task.id)" class="btn btn-icon text-secondary">
+                    <span class="typcn typcn-edit"></span>
+                  </button>
+                  <button *ngIf="isAdmin" (click)="deleteTask(task.id)" class="btn btn-icon text-danger">
+                    <span class="typcn typcn-trash"></span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr *ngIf="filteredTasks.length === 0">
+              <td colspan="5" class="text-center no-tasks-message">No tasks found</td>
+            </tr>
+            </tbody>
+          </table>
+        </div><!-- table-responsive -->
+      </div><!-- table-container -->
+
+      <div class="ht-40"></div>
+    </div><!-- az-content-body -->
+
+  </div><!-- container -->
+</div><!-- az-content -->
